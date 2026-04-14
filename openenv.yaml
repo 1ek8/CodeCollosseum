@@ -1,0 +1,21 @@
+version: "1.0"
+name: "Clean Code Refactorer"
+description: "An environment where an agent iteratively refactors bad Python code using flake8 and mypy feedback."
+tags:
+  - coding
+  - refactoring
+  - static-analysis
+
+tasks:
+  - id: "easy"
+    description: "Fix basic PEP8 formatting issues using flake8."
+  - id: "medium"
+    description: "Resolve code smells like mutable defaults and unused variables."
+  - id: "hard"
+    description: "Add strict typing to a complex file to satisfy mypy."
+
+infrastructure:
+  machine_type: "2-vcpu-8gb"
+  container_build_timeout: 600
+  inference_timeout: 1200
+  hf_space_tag: "openenv"
